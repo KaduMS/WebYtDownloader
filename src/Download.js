@@ -11,7 +11,7 @@ const Download = () => {
     const handleDownload = async () => {
         setStatus('Downloading...');
         try {
-            const response = await axios.post('http://localhost:5000/download', { url, outputDir }, {
+            const response = await axios.post('https://downloaderpy.onrender.com/download', { url, outputDir }, {
                 onDownloadProgress: progressEvent => {
                     let percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
                     setProgress(percentCompleted);
@@ -31,6 +31,7 @@ const Download = () => {
     return (
         <div className="container">
             <h1>YouTube Downloader</h1>
+            <h3>Sem ADS (por enquanto)</h3>
             <input
                 type="text"
                 placeholder="YouTube URL"
